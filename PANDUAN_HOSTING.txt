@@ -1,0 +1,59 @@
+=====================================================
+PANDUAN LENGKAP HOSTING APLIKASI ARSIP DIGITAL
+=====================================================
+
+Aplikasi ini sudah dipersiapkan dan dioptimasi agar 100% siap di-hosting ke layanan manapun (seperti cPanel, Niagahoster, Hostinger, dll) tanpa error. 
+
+Langkah-langkah untuk melakukan hosting (online):
+
+1. EXPORT DATABASE DARI LOCALHOST
+   - Buka XAMPP, buka `http://localhost/phpmyadmin/`
+   - Klik database `arsip_digital`
+   - Klik menu "Export" (Ekspor), lalu klik "Go" (Kirim)
+   - Anda akan mendapatkan file bernama `arsip_digital.sql` (Atau Anda bisa langsung memakai file `db.sql` yang sudah ada di folder aplikasi ini).
+
+2. COMPRESS / ZIP FOLDER APLIKASI
+   - Buka folder `c:\xampp\htdocs\arsip_digital\`
+   - Blok semua file dan folder di dalamnya (termasuk folder `assets`, `uploads`, dll).
+   - Klik Kanan -> Send to -> Compressed (zipped) folder / jadikan `.zip`.
+   - Beri nama bebas, misal `arsip_online.zip`.
+
+3. UPLOAD KE HOSTING (cPanel)
+   - Buka panel hosting Anda (misal cPanel).
+   - Buka menu **File Manager** (Manajer File).
+   - Masuk ke folder `public_html`.
+   - Klik "Upload", lalu masukkan file `arsip_online.zip` tadi.
+   - Setelah selesai, klik Kanan file zip tersebut dan pilih **Extract**.
+
+4. BUAT DATABASE DI HOSTING
+   - Kembali ke halaman utama cPanel.
+   - Buka menu **MySQL Databases**.
+   - Buat nama database baru (misal: `arsip_ku`).
+   - Buat user database baru (misal: `arsip_user`) dan password (misal: `Rahasia123!`).
+   - Tambahkan user tersebut ke database (Add User to Database), centang "All Privileges".
+
+5. IMPORT DATABASE KE HOSTING
+   - Buka menu **phpMyAdmin** di cPanel.
+   - Klik database yang baru Anda buat (`arsip_ku`).
+   - Klik menu "Import".
+   - Masukkan file `arsip_digital.sql` / `db.sql` yang didapat dari Langkah 1.
+   - Klik "Go".
+
+6. HUBUNGKAN KODE APLIKASI DENGAN DATABASE HOSTING
+   - Kembali ke **File Manager** -> `public_html`.
+   - Cari file `config.php`, klik Kanan dan pilih **Edit**.
+   - Ubah baris kode berikut sesuai data di Langkah 4:
+     
+     $host = 'localhost'; 
+     $user = 'arsip_user';  <-- Ubah dengan nama user DB hosting Anda
+     $pass = 'Rahasia123!'; <-- Ubah dengan password DB hosting Anda
+     $dbname = 'arsip_ku';  <-- Ubah dengan nama DB hosting Anda
+
+   - Klik Save (Simpan).
+
+Selesai! Aplikasi Anda sekarang sudah bisa diakses melalui nama domain website Anda (contoh: www.namakelurahan.com).
+
+=====================================================
+CATATAN KEAMANAN (Sudah Dikerjakan)
+- File .htaccess sudah ditambahkan untuk mencegah orang luar mengintip isi folder Anda.
+- File index.html kosong sudah ditaruh di folder 'uploads/' agar file sensitif warga aman dari pencurian link langsung (Directory Listing).

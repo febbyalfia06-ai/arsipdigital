@@ -1,0 +1,41 @@
+# =============================================
+# .gitignore untuk Arsip Digital Kelurahan
+# =============================================
+
+# Log files
+*.log
+cloudflare.log
+pinggy.log
+
+# Binary / executables
+cloudflared.exe
+
+# Upload files (dokumen arsip tidak perlu di-commit ke Git)
+uploads/surat_masuk/
+uploads/surat_keluar/
+uploads/profil/
+
+# Tapi biarkan folder uploads tetap ada dengan .gitkeep
+!uploads/surat_masuk/.gitkeep
+!uploads/surat_keluar/.gitkeep
+!uploads/profil/.gitkeep
+
+# File sensitif / utility sementara
+remove_bg.php
+update_paths.php
+create_logos.php
+pasang_logo.php
+
+# Konfigurasi lokal (password DB dsb.)
+# config.php -- JANGAN di-exclude agar struktur tetap ada, tapi ganti isinya dengan placeholder
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
