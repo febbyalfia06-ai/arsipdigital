@@ -65,7 +65,7 @@ function formatBytes($bytes, $precision = 2) {
 <div class="header-action">
     <h2 class="page-title" style="margin-bottom:0;">Penyimpanan Arsip</h2>
     <div>
-        <form method="GET" action="" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+        <form method="GET" action="">
             <input type="text" name="search" class="form-control" placeholder="Cari Nama Dokumen..." value="<?= htmlspecialchars($search) ?>" style="width:200px; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 4px;">
             <select name="tipe" class="form-control" onchange="this.form.submit()" style="width:200px;">
                 <option value="masuk" <?= $tipe_arsip == 'masuk' ? 'selected' : '' ?>>📂 Data Arsip Masuk</option>
