@@ -379,14 +379,27 @@ textarea.form-control {
     .flex-col-mobile table {
         width: 100% !important;
     }
+    .flex-col-mobile tr {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
     .flex-col-mobile td {
         display: block;
         width: 100% !important;
         text-align: left;
+        border: none !important;
+        padding: 0 !important;
     }
     .flex-col-mobile tr td:first-child {
-        padding-bottom: 0 !important;
         color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+    .flex-col-mobile tr td:last-child {
+        font-size: 1rem;
+        color: var(--text-main);
+        line-height: 1.5;
     }
 }
 
