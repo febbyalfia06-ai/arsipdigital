@@ -346,8 +346,10 @@ textarea.form-control {
     .header-action .form-control {
         width: 100% !important;
     }
-    .header-action button {
+    .header-action button, .header-action .btn {
         width: 100% !important;
+        text-align: center;
+        box-sizing: border-box;
     }
     .topbar {
         padding: 15px 20px;
