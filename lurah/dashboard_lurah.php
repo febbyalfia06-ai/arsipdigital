@@ -58,7 +58,7 @@ foreach($categories as $cat) {
 }
 ?>
 
-<div class="header-action" style="display:flex; justify-content:space-between; align-items:center;">
+<div class="header-action">
     <h2 class="page-title" style="margin-bottom:0;">Dashboard Statistik</h2>
     <div>
         <form method="GET" action="">

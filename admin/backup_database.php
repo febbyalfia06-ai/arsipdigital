@@ -5,7 +5,9 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     exit();
 }
 include '../header.php'; ?>
-<h2 class="page-title">Setting: Backup Database</h2>
+<div class="header-action">
+    <h2 class="page-title" style="margin-bottom:0;">Setting: Backup Database</h2>
+</div>
 <div class="card">
     <p>Halaman ini akan digunakan untuk melakukan Backup dan Restore Database sistem.</p>
     <p class="text-muted">Fitur sedang dalam pengembangan...</p>

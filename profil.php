@@ -20,7 +20,7 @@ if(isset($_SESSION['error'])) {
 }
 ?>
 
-<div class="stats-grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px;">
+<div class="stats-grid">
     <?php if(mysqli_num_rows($query) > 0): ?>
         <?php while($row = mysqli_fetch_assoc($query)): ?>
             <?php 

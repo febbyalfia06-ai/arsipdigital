@@ -60,32 +60,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="card">
     <?php if(isset($error)) echo "<div class='alert' style='background:#fee2e2; color:#991b1b;'>$error</div>"; ?>
     <form action="" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label>Nama Lengkap</label>
-            <input type="text" name="nama" class="form-control" placeholder="Masukkan nama lengkap" required>
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" name="nama" class="form-control" placeholder="Masukkan nama lengkap" required>
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Masukkan username untuk login" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Masukkan password" required>
+            </div>
+            <div class="form-group">
+                <label>Hak Akses / Role</label>
+                <select name="role" class="form-control" required>
+                    <option value="admin">Administrator</option>
+                    <option value="sekretaris">Sekretaris</option>
+                    <option value="lurah">Lurah</option>
+                </select>
+            </div>
+            <div class="form-group col-span-full">
+                <label>Upload Foto Profil</label>
+                <input type="file" name="foto" class="form-control" accept="image/*">
+                <small style="color:#6b7280; display:block; margin-top:5px;">Biarkan kosong jika tidak ingin menambahkan foto.</small>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Username</label>
-            <input type="text" name="username" class="form-control" placeholder="Masukkan username untuk login" required>
-        </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" placeholder="Masukkan password" required>
-        </div>
-        <div class="form-group">
-            <label>Hak Akses / Role</label>
-            <select name="role" class="form-control" required>
-                <option value="admin">Administrator</option>
-                <option value="sekretaris">Sekretaris</option>
-                <option value="lurah">Lurah</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Upload Foto Profil</label>
-            <input type="file" name="foto" class="form-control" accept="image/*">
-            <small style="color:#6b7280; display:block; margin-top:5px;">Biarkan kosong jika tidak ingin menambahkan foto.</small>
-        </div>
-        <button type="submit" class="btn" style="background:#3b82f6;"><i class="fas fa-save"></i> Simpan Akun</button>
+        <button type="submit" class="btn" style="background:#3b82f6; width: 100%; margin-top: 10px;"><i class="fas fa-save"></i> Simpan Akun</button>
     </form>
 </div>
 
