@@ -278,6 +278,14 @@ textarea.form-control {
     resize: vertical;
 }
 
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+.col-span-full {
+    grid-column: 1 / -1;
+}
 .alert {
     padding: 15px;
     border-radius: 8px;
@@ -359,6 +367,9 @@ textarea.form-control {
         color: var(--primary);
         cursor: pointer;
         padding: 5px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
     }
 }
 

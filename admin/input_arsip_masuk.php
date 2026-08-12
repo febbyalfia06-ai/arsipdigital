@@ -70,68 +70,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="card">
     <?php if(isset($error)) echo "<div class='alert' style='background:#fee2e2; color:#991b1b;'>$error</div>"; ?>
     <form action="" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-            <label>Nomor Surat</label>
-            <input type="text" name="nomor_surat" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>No Agenda</label>
-            <input type="text" name="no_agenda" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Tanggal Surat</label>
-            <input type="date" name="tanggal_surat" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Diterima Tanggal</label>
-            <input type="date" name="tanggal_diterima" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Surat Dari</label>
-            <input type="text" name="pengirim" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label>Kepada</label>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Sekretaris Kelurahan"> Sekretaris Kelurahan</label>
-                <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi PEMTRANTIBUM"> Kasi PEMTRANTIBUM</label>
-                <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi Permasbang"> Kasi Permasbang</label>
-                <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi Kesejahteraan"> Kasi Kesejahteraan</label>
-                <input type="text" name="kepada_manual" class="form-control" placeholder="Lainnya ..." style="margin-top: 5px;">
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Nomor Surat</label>
+                <input type="text" name="nomor_surat" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>No Agenda</label>
+                <input type="text" name="no_agenda" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Tanggal Surat</label>
+                <input type="date" name="tanggal_surat" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Diterima Tanggal</label>
+                <input type="date" name="tanggal_diterima" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Surat Dari</label>
+                <input type="text" name="pengirim" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Kategori Arsip Masuk</label>
+                <select name="kategori" class="form-control" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Surat dari kecamatan">1. Surat dari kecamatan</option>
+                    <option value="Surat dari pemerintah kota">2. Surat dari pemerintah kota</option>
+                    <option value="Surat dari instansi pemerintah lainnya">3. Surat dari instansi pemerintah lainnya</option>
+                    <option value="Surat dari RT/RW">4. Surat dari RT/RW</option>
+                    <option value="Surat permohonan dari masyarakat">5. Surat permohonan dari masyarakat</option>
+                    <option value="Surat undangan">6. Surat undangan</option>
+                    <option value="Surat edaran">7. Surat edaran</option>
+                    <option value="Surat pemberitahuan">8. Surat pemberitahuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Kepada</label>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Sekretaris Kelurahan"> Sekretaris Kelurahan</label>
+                    <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi PEMTRANTIBUM"> Kasi PEMTRANTIBUM</label>
+                    <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi Permasbang"> Kasi Permasbang</label>
+                    <label style="font-weight: normal; margin-bottom: 0;"><input type="checkbox" name="kepada_checkbox[]" value="Kasi Kesejahteraan"> Kasi Kesejahteraan</label>
+                    <input type="text" name="kepada_manual" class="form-control" placeholder="Lainnya ..." style="margin-top: 5px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Sifat Surat</label>
+                <select name="sifat" class="form-control" required>
+                    <option value="">-- Pilih Sifat --</option>
+                    <option value="Sangat Segera">Sangat Segera</option>
+                    <option value="Segera">Segera</option>
+                    <option value="Rahasia">Rahasia</option>
+                </select>
+            </div>
+            <div class="form-group col-span-full">
+                <label>Nama Dokumen / Perihal</label>
+                <textarea name="perihal" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="form-group col-span-full">
+                <label>Upload File (PDF/Word/Excel/Gambar)</label>
+                <input type="file" name="file_surat" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip,.rar" required>
             </div>
         </div>
-        <div class="form-group">
-            <label>Kategori Arsip Masuk</label>
-            <select name="kategori" class="form-control" required>
-                <option value="">-- Pilih Kategori --</option>
-                <option value="Surat dari kecamatan">1. Surat dari kecamatan</option>
-                <option value="Surat dari pemerintah kota">2. Surat dari pemerintah kota</option>
-                <option value="Surat dari instansi pemerintah lainnya">3. Surat dari instansi pemerintah lainnya</option>
-                <option value="Surat dari RT/RW">4. Surat dari RT/RW</option>
-                <option value="Surat permohonan dari masyarakat">5. Surat permohonan dari masyarakat</option>
-                <option value="Surat undangan">6. Surat undangan</option>
-                <option value="Surat edaran">7. Surat edaran</option>
-                <option value="Surat pemberitahuan">8. Surat pemberitahuan</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Sifat Surat</label>
-            <select name="sifat" class="form-control" required>
-                <option value="">-- Pilih Sifat --</option>
-                <option value="Sangat Segera">Sangat Segera</option>
-                <option value="Segera">Segera</option>
-                <option value="Rahasia">Rahasia</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Nama Dokumen / Perihal</label>
-            <textarea name="perihal" class="form-control" rows="3" required></textarea>
-        </div>
-        <div class="form-group">
-            <label>Upload File (PDF/Word/Excel/Gambar)</label>
-            <input type="file" name="file_surat" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip,.rar" required>
-        </div>
-        <button type="submit" class="btn"><i class="fas fa-save"></i> Simpan Data</button>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;"><i class="fas fa-save"></i> Simpan Data</button>
     </form>
 </div>
 
