@@ -32,11 +32,12 @@ if (!$profil) {
             <?= $_SESSION['success']; unset($_SESSION['success']); ?>
         </div>
     <?php endif; ?>
-    <div style="display: flex; gap: 20px; align-items: flex-start;">
+    <div class="flex-col-mobile" style="display: flex; gap: 20px; align-items: flex-start;">
         <img src="../assets/logo_sidebar.png" alt="Logo Kelurahan" style="width: 150px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <div>
+        <div style="width: 100%;">
             <h3 style="margin-bottom: 15px; font-size: 20px; color: var(--text-main);">Kelurahan Pengasinan</h3>
-            <table style="width: 100%; max-width: 600px; border: none;">
+            <div class="table-responsive">
+                <table style="width: 100%; max-width: 600px; border: none;">
                 <tr style="border-bottom: 1px solid #eee;">
                     <td style="padding: 10px 0; font-weight: 500; width: 250px;">Alamat</td>
                     <td style="padding: 10px 0;"><?= htmlspecialchars($profil['alamat']) ?></td>
@@ -74,7 +75,8 @@ if (!$profil) {
                     <td style="padding: 10px 0;"><?= htmlspecialchars($profil['kasi_kesejahteraan']) ?></td>
                 </tr> 
 
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 </div>

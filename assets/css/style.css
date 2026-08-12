@@ -371,6 +371,23 @@ textarea.form-control {
     .form-grid {
         grid-template-columns: 1fr;
     }
+    .flex-col-mobile {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+    .flex-col-mobile table {
+        width: 100% !important;
+    }
+    .flex-col-mobile td {
+        display: block;
+        width: 100% !important;
+        text-align: left;
+    }
+    .flex-col-mobile tr td:first-child {
+        padding-bottom: 0 !important;
+        color: var(--text-muted);
+    }
 }
 
 .mobile-menu-toggle {
