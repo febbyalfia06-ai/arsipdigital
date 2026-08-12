@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Jakarta');
 
 session_start();
 
-define('BASE_URL', 'http://localhost/arsip_digital/');
+define('BASE_URL', 'http://localhost:8000/');
 
 // =========================================================================
 // PENGATURAN DATABASE (Ubah bagian ini saat aplikasi di-upload ke Hosting)

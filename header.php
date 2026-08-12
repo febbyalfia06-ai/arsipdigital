@@ -93,11 +93,18 @@ if (!isset($_SESSION['user_id'])) {
     </ul>
 </div>
 
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
 <div class="main-content">
-    <div class="topbar" style="display:flex; justify-content:space-between; align-items:center;">
-        <div>
-            <?php 
-            $current_page = basename($_SERVER['PHP_SELF']);
+    <div class="topbar">
+        <div class="header-title-area">
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div>
+                <?php 
+                $current_page = basename($_SERVER['PHP_SELF']);
             $is_dashboard = in_array($current_page, ['dashboard_admin.php', 'dashboard_sekretaris.php', 'dashboard_lurah.php']);
             if(!$is_dashboard): 
             ?>
