@@ -51,43 +51,45 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="card">
     <?php if(isset($error)) echo "<div class='alert' style='background:#fee2e2; color:#991b1b;'>$error</div>"; ?>
     <form action="" method="POST">
-        <div class="form-group">
-            <label>Alamat</label>
-            <textarea name="alamat" class="form-control" rows="3" required><?= htmlspecialchars($profil['alamat']) ?></textarea>
+        <div class="form-grid">
+            <div class="form-group col-span-full">
+                <label>Alamat</label>
+                <textarea name="alamat" class="form-control" rows="3" required><?= htmlspecialchars($profil['alamat']) ?></textarea>
+            </div>
+            <div class="form-group">
+                <label>Telepon</label>
+                <input type="text" name="telepon" class="form-control" value="<?= htmlspecialchars($profil['telepon']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($profil['email']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Lurah</label>
+                <input type="text" name="lurah" class="form-control" value="<?= htmlspecialchars($profil['lurah']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Sekretaris Kelurahan</label>
+                <input type="text" name="sekretaris" class="form-control" value="<?= htmlspecialchars($profil['sekretaris']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Kepala Sekretariat</label>
+                <input type="text" name="kepala_sekretariat" class="form-control" value="<?= htmlspecialchars($profil['kepala_sekretariat']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Kepala Seksi Pemerintahan</label>
+                <input type="text" name="kasi_pemerintahan" class="form-control" value="<?= htmlspecialchars($profil['kasi_pemerintahan']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Kepala Seksi Pemberdayaan Masyarakat</label>
+                <input type="text" name="kasi_permasbang" class="form-control" value="<?= htmlspecialchars($profil['kasi_permasbang']) ?>" required>
+            </div>
+            <div class="form-group">
+                <label>Kepala Seksi Kesejahteraan Sosial</label>
+                <input type="text" name="kasi_kesejahteraan" class="form-control" value="<?= htmlspecialchars($profil['kasi_kesejahteraan']) ?>" required>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Telepon</label>
-            <input type="text" name="telepon" class="form-control" value="<?= htmlspecialchars($profil['telepon']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" value="<?= htmlspecialchars($profil['email']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Lurah</label>
-            <input type="text" name="lurah" class="form-control" value="<?= htmlspecialchars($profil['lurah']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Sekretaris Kelurahan</label>
-            <input type="text" name="sekretaris" class="form-control" value="<?= htmlspecialchars($profil['sekretaris']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Kepala Sekretariat</label>
-            <input type="text" name="kepala_sekretariat" class="form-control" value="<?= htmlspecialchars($profil['kepala_sekretariat']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Kepala Seksi Pemerintahan</label>
-            <input type="text" name="kasi_pemerintahan" class="form-control" value="<?= htmlspecialchars($profil['kasi_pemerintahan']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Kepala Seksi Pemberdayaan Masyarakat</label>
-            <input type="text" name="kasi_permasbang" class="form-control" value="<?= htmlspecialchars($profil['kasi_permasbang']) ?>" required>
-        </div>
-        <div class="form-group">
-            <label>Kepala Seksi Kesejahteraan Sosial</label>
-            <input type="text" name="kasi_kesejahteraan" class="form-control" value="<?= htmlspecialchars($profil['kasi_kesejahteraan']) ?>" required>
-        </div>
-        <button type="submit" class="btn"><i class="fas fa-save"></i> Simpan Perubahan</button>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 10px;"><i class="fas fa-save"></i> Simpan Perubahan</button>
     </form>
 </div>
 
