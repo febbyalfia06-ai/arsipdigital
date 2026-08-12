@@ -112,6 +112,7 @@ if (!isset($_SESSION['user_id'])) {
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
             <?php endif; ?>
+            </div>
         </div>
         <div class="user-info" style="display:flex; align-items:center; gap:10px; font-weight:500;">
             <i class="fas fa-user-circle fa-2x" style="color:var(--primary);"></i>
